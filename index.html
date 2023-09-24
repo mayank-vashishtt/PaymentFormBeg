@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Form</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(good.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        h1{
+             color: white ;
+             font-family: 'Courier New', Courier, monospace;
+             font-size: 41px;
+
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 100px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="number"] {
+            width: 90%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group select {
+            width: 95%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        #myButton{
+            border: none;
+            border-radius: 10px;
+            width: 95%;
+            padding: 0.5rem 1rem;
+            transition: 100ms ease-in-out;
+        } 
+        #myButton:hover{
+            background-color: black;
+            color: white;
+
+        }
+        #name{
+            color: black;
+        
+        }
+        #name:hover{
+            background-color: black;
+            color: white;
+        }
+        label[for="name"] {
+    color: white; 
+    font-size: 25px; /* Change the font size to 16 pixels */
+    font-family: 'Courier New', Courier, monospace;
+  }
+  h3{
+    color:white;
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  #labelText{
+    color: white;
+    padding-bottom: 0.5rem;
+    font-family: 'Courier New', Courier, monospace;
+font-weight: bold;
+font-style: italic;
+font-size: 1.25rem;
+  }
+
+  .form-group{
+    margin-top: 0.5rem;
+  }
+  span{
+    font-size: 1.20rem;
+
+  }
+        
+    </style>
+
+    
+</head>
+<body>
+    <div class="container">
+        <h1 align="center" aria-setsize="100"><b><i>Make a Payment!</i></b></h1>
+        <form id="myForm" >
+            <div class="form-group">
+                <span><label id="labelText" for="name">Name: </label></span>
+                <input type="text" id="name" name="name"  required style="color: red; font-size: 16px;" required>
+            </div>
+            <br>
+            <label for="city" id="labelText"><span>Available Delivery Cities :</span>
+
+            <div class="form-group">
+                    <select name="City" id="City" required>
+                        <option value="">--Select Your City--</option>
+                        <option value="Bengaluru">Bengaluru</option>
+                        <option value="Bhopal">Bhopal</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Gurgoan">Gurgoan</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Noida">Noida</option>
+                        <option value="Pune">Pune</option>
+                        <option value="Varanasi">Varanasi</option>
+    
+                        
+                    </select>
+            
+            </div>
+            <div class="form-group">
+                <br>
+                <button id="myButton" type="submit">Pay</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            // Check if the form is valid
+            if (validateForm()) {
+                // Redirect to another page after form submission
+                event.preventDefault();
+                window.location.href = "./PaymentForm.html";
+            } else {
+                // Prevent the default form submission behavior
+                event.preventDefault();
+            }
+        });
+
+        function validateForm() {
+            var name = document.getElementById("name").value;
+            var city = document.getElementById("City").value;
+
+            // Check if the name and city fields are filled out
+            if (name.trim() === "" || city.trim() === "") {
+                alert("Please fill out all required fields.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>

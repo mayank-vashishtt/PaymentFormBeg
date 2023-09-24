@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Form</title>
+  <link rel="stylesheet" href="prac1.css">
+  <style>
+    p{
+      color: pink;
+    }
+  </style>
+</head>
+<body>
+  <form id="index" action="latpay.html">
+    <h1 align="center">Make a PAYMENT! </h1>
+    <fieldset><h3><i>Contact Information</i></h3>
+    <h5>Name:* <input type="text" name="name" required></h5>
+    <fieldset>
+    
+    
+      <legend><h5>Gender</h5></legend>
+      <p class="mayank" style="color: brown;
+      font-display: bold">
+      Male <input type="radio" name="gender" id="Male" required>
+      Female <input type="radio" name="gender" id="Female" required>
+      </p>
+    </fieldset>
+    
+    <h5>E-mail:* <input type="email" name="email" id="email" required></h5>
+    <h5>Pincode:* <input type="number" name="pincode" id="pincode"></h5><hr></fieldset>
+    <br>
+    <fieldset><legend><h3><i>Payment Information</i></h3></legend>
+    <h5>Card Type:*
+       <select name="card_type" id="card_type" required>
+        <option value="">--Select a card type--</option>
+        <option value="visa">visa</option>
+        <option value="mastercard">mastercard</option>
+        <option value="rupay">rupay</option>
+      
+        
+       </select>
+      </h5>
+    <h5>
+      Card Number:* <input type="number" name="Card_number" id="Card_number" required>
+  
+    </h5>
+    <h5>
+      Expiry-date:*<input type="date" name="Expiry-date" id="Expiry-date" required>
+    </h5>
+    <h5>
+      CVV *<input type="password" name="CVV" id="CVV" required>
+    </h5>
+    <hr>
+  </fieldset>
+  <br>
+  <button id="myButton" type="submit" onclick=formSubmitHandler>Pay</button>
+       
+  </form>
+  <script>
+    document.getElementById("index").addEventListener("submit", function(event) {
+        // Check if the form is valid
+        if (validateForm()) {
+            // Redirect to another page after form submission
+           
+        } else {
+            // Prevent the default form submission behavior
+            event.preventDefault();
+        }
+    });
+    function formSubmitHandler(e) {
+      e.preventDefault();
+    }
+    function validateForm() {
+        var name = document.getElementById("name").value;
+        var gender = document.getElementById("gender").value;
+        var email = document.getElementById("email").value;
+        var pincode = document.getElementById("pincode").value;
+        var card_type = document.getElementById("card_type").value;
+        var Expirydate = document.getElementById("Expiry-date").value;
+        var CVV = document.getElementById("CVV").value;
+
+        // Check if the name and city fields are filled out
+        if (name.trim() === "" || gender.trim() === "" || email.trim() === "" || pincode.trim() === "" || card_type.trim() === "" || Expirydate.trim() === "" || CVV.trim() === ""){
+            alert("Please fill out all required fields.");
+            return false;
+        }
+        return true;
+    }
+</script>
+  <p>Required fields are followed by *</p>
+
+  
+</body>
+</html>
+
+
