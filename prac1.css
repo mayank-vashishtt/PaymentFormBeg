@@ -1,0 +1,64 @@
+ 
+ *{
+    font-family:  monospace;
+    
+    
+ }
+ .mayank{
+   font-size: 25px;
+ }
+ h1{
+   color: white;
+   font-display: bold;
+   font-style: italic;
+   font-size: 55px;
+ }
+ h3{
+   color: white;
+ }
+ h2{
+    color: purple;
+    font-size: 39px;
+ }
+ button, input, textarea, select{
+    font: inherit;
+    
+ }
+ h5{
+   color: white;
+   font-style: italic;
+
+ }
+ body{
+    font-size: 22px;
+    border: 3px dotted black;
+    background-image: url(legef.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+
+ }
+ p{
+    color: white;
+    font-size: 15px
+    ;
+
+ }
+ .gray{
+    color: gray;  
+
+ }
+ #Male{
+    font-style: italic ;
+
+ }
+
+ p span{
+    text-transform: uppercase;
+    background-color: gold;
+ }
+ main{
+    
+ }
+
+ 
